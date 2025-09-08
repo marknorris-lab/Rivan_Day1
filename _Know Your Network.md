@@ -1893,8 +1893,29 @@ conf t
 ---
 &nbsp;
 
+### ⚙️ IP addressing
+~~~
+!@EDGE
+conf t
+ int gi 0/0/0
+  no shut
+  ip add 10.#$34T#.#$34T#.1 255.255.255.0
+  desc INSIDE
+ int gi 0/0/1
+  no shut
+  ip add 200.0.0.#$34T# 255.255.255.0
+  desc OUTSIDE
+ int loopback 0
+  ip add #$34T#.0.0.1 255.255.255.255
+  desc VIRTUALIP
+  end
+~~~
 
+<br>
+<br>
 
+---
+&nbsp;
 
 ### ⚙️ Configure routing protocols
 What are the jobs of a router?
