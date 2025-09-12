@@ -3386,6 +3386,17 @@ conf t
   password pass
   login
   exec-timeout 0 0
+ int gi 0/0/0
+  no shut
+  ip add 10.#$34T#.#$34T#.1 255.255.255.0
+  desc INSIDE
+ int gi 0/0/1
+  no shut
+  ip add 200.0.0.#$34T# 255.255.255.0
+  desc OUTSIDE
+ int loopback 0
+  ip add #$34T#.0.0.1 255.255.255.255
+  desc VIRTUALIP
   end
 ~~~
 
@@ -3443,7 +3454,7 @@ conf t
  ip route 10.82.0.0 255.255.0.0 200.0.0.82 254
  ip route 10.91.0.0 255.255.0.0 200.0.0.81 254
  ip route 10.92.0.0 255.255.0.0 200.0.0.82 254
- ip route 10.#$34T#.0.0 255.255.0.0 10.#$34T#.#$34T#.4 254
+ ip route 10.#$34T#.0.0 255.255.0.0 10.#$34T#.#$34T#.4 253
  end
 ~~~
 
