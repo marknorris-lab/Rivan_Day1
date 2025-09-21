@@ -120,6 +120,7 @@ conf t
   default-router 10.#$34T#.10.4
   domain-name WIFIDATA.COM
   dns-server 10.#$34T#.1.10
+  option 43 ip 10.#$34T#.10.#$34T#
  ip dhcp pool POOLCCTV
   network 10.#$34T#.50.0 255.255.255.0
   default-router 10.#$34T#.50.4
@@ -583,3 +584,4 @@ conf t
 conf t
  class-map voip
   match ip dscp  ?
+
