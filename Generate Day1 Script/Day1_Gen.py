@@ -415,7 +415,7 @@ conf t
  ip route 10.72.0.0 255.255.0.0 200.0.0.72 254
  ip route 10.81.0.0 255.255.0.0 200.0.0.81 254
  ip route 10.82.0.0 255.255.0.0 200.0.0.82 254
- ip route 10.{monitor}.0.0 255.255.0.0 10.{monitor}.{monitor}.4 254
+ ip route 10.{monitor}.0.0 255.255.0.0 10.{monitor}.{monitor}.4 253
  end
 
 !@ospf routing edge
@@ -524,3 +524,4 @@ print(f'''
 Script generation complete!
 View the file \'day1-{name}-{monitor}.txt\'
 ''')
+
