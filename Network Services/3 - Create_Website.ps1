@@ -2,8 +2,6 @@
 #  VARIABLES
 # ----------------------------
 $Monitor = "11"
-
-$ServerIP = "10"
 $ZoneName = "rivan$Monitor.com"
 
 # ----------------------------
