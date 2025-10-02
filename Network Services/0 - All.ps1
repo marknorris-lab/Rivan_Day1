@@ -11,7 +11,11 @@
 $Monitor = "11"
 
 $ServerIP = "10"
-$ZoneName = "rivan$Monitor.com"
+
+$SLD = "rivan"
+$TLD = "com"
+$ZoneName = "$SLD$Monitor.$TLD"
+
 $ClassMonitors = @(
     "11"
     "12"
@@ -108,9 +112,10 @@ Add-DnsServerResourceRecord -ZoneName $ZoneName -A -Name "ap" -IPv4Address "10.$
 # SECONDARY
 foreach ($Record in $ClassMonitors) {
     if ($Record -ne $Monitor) {
-        Add-DnsServerSecondaryZone -Name "rivan$Record.com" -ZoneFile "rivan$Record.com.dns" -MasterServers "10.$Record.1.$ServerIP"
+        Add-DnsServerSecondaryZone -Name "$SLD$Record.$TLD" -ZoneFile "$SLD$Record.$TLD.dns" -MasterServers "10.$Record.1.$ServerIP"
     }
 }
 
 # Modify Zone Transfer
+
 Set-DnsServerPrimaryZone -name $ZoneName -SecureSecondaries TransferAnyServer -Notify NotifyServers -NotifyServers $NotifyList
