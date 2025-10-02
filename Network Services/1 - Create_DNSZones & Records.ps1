@@ -4,7 +4,10 @@
 $Monitor = "11"
 
 $ServerIP = "10"
-$ZoneName = "rivan$Monitor.com"
+
+$SLD = "rivan"
+$TLD = "com"
+$ZoneName = "$SLD$Monitor.$TLD"
 
 # ReverseLookup
 $NetworkID_1 = "10.$Monitor.1.0/24"
@@ -61,4 +64,5 @@ Add-DnsServerResourceRecord -ZoneName $ZoneName -A -Name "p1" -IPv4Address "10.$
 Add-DnsServerResourceRecord -ZoneName $ZoneName -A -Name "p2" -IPv4Address "10.$Monitor.100.102" -CreatePTR
 Add-DnsServerResourceRecord -ZoneName $ZoneName -A -Name "c1" -IPv4Address "10.$Monitor.50.6" -CreatePTR
 Add-DnsServerResourceRecord -ZoneName $ZoneName -A -Name "c2" -IPv4Address "10.$Monitor.50.8" -CreatePTR
+
 Add-DnsServerResourceRecord -ZoneName $ZoneName -A -Name "ap" -IPv4Address "10.$Monitor.10.3" -CreatePTR
