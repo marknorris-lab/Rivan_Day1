@@ -1,6 +1,23 @@
 
 <!-- Your monitor number = #$34T# -->
 
+### Set WinServer VM as a DNS server
+
+Make sure VM has 2 NetAdapters:
+|              |                     |
+| ---          | ---                 |
+| NetAdapter   | NAT                 |
+| NetAdapter 2 | Bridged (Replicate) |
+
+<br>
+
+On the real PC, set the DNS of VMNet8 as the IP of WinServer VM's NAT IP (208.8.8.x)
+
+<br>
+<br>
+
+---
+&nbsp;
 
 # 🌐 Domain Name System
 *Connect to websites through IP addresses alone.*
@@ -317,6 +334,7 @@ SSL Certificate
   User: Support
 
   Pass: C1sc0123
+
 
 
 
