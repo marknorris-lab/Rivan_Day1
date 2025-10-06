@@ -4,10 +4,10 @@
 ### Set WinServer VM as a DNS server
 
 Make sure VM has 2 NetAdapters:
-|              |                     |
-| ---          | ---                 |
-| NetAdapter   | NAT                 |
-| NetAdapter 2 | Bridged (Replicate) |
+| Network Adapter  |                     |
+| ---              | ---                 |
+| NetAdapter       | NAT                 |
+| NetAdapter 2     | Bridged (Replicate) |
 
 <br>
 
@@ -334,6 +334,7 @@ SSL Certificate
   User: Support
 
   Pass: C1sc0123
+
 
 
 
