@@ -75,7 +75,7 @@ conf t
  no router ospf 1
 router ospf 1
  router-id #$3AT#.0.0.1
- network 10.#$3AT#.#$3AT#0 0.0.0.255 area 0
+ network 10.#$3AT#.#$3AT#.0 0.0.0.255 area 0
  default-information origiate always
  end
 ~~~
