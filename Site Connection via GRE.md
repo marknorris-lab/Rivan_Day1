@@ -255,6 +255,7 @@ traceroute 10.12.1.10
 ~~~
 !@TAAS, BABA, CUCM, EDGE
 conf t
+ ip domain lookup
  ip name-server 10.#$34T.1.10
  end
 ~~~
