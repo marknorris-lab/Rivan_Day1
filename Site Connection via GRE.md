@@ -9,10 +9,6 @@ conf t
  end
 ~~~
 
-&nbsp;
----
-&nbsp;
-
 ## Site to Site connection via VTI (GRE)
 
 ### SET GATEWAY
@@ -88,7 +84,7 @@ conf t
 router ospf 1
  router-id #$3AT#.0.0.1
  network 10.#$3AT#.#$3AT#.0 0.0.0.255 area 0
- default-information origiate always
+ default-information originate always
  end
 ~~~
 
