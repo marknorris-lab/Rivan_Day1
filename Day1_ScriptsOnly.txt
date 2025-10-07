@@ -487,12 +487,23 @@ conf t
  end
 
 
--- INTERNET --
+--- INTERNET ---
 !@edge
 ping 200.0.0.1
 conf t
  ip route 0.0.0.0 0.0.0.0 200.0.0.1
  end
+
+--- MODIFY ROUTING INSIDE ---
+!@EDGE
+conf t
+ no router ospf 1
+router ospf 1
+ router-id #$34T#.0.0.1
+ network 10.#$34T#.#$34T#.0 0.0.0.255 area 0
+ default-information originate always
+ end
+
 
 
 --- GRE Tunneling ---
@@ -746,6 +757,7 @@ conf t
 conf t
  class-map voip
   match ip dscp  ?
+
 
 
 
