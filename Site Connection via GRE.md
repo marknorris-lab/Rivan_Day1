@@ -1,6 +1,18 @@
 
 <!-- #$34T# = Your Monitor Number -->
 
+### REMOVE L3 OPERATIONS
+~~~
+!@EDGE
+conf t
+ no ip routing
+ end
+~~~
+
+&nbsp;
+---
+&nbsp;
+
 ## Site to Site connection via VTI (GRE)
 
 ### SET GATEWAY
