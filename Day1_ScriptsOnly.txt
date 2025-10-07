@@ -470,6 +470,32 @@ network 10.#$34T#.100.0 0.0.0.255 area 0
 end
 
 
+
+************** NAT Configuration **************
+
+!@edge
+conf t
+ access-list 1 permit any
+ !
+ int g0/0/0 
+  ip nat inside
+  exit
+ int g0/0/1
+  ip nat outside
+  exit
+ ip nat inside source list 1 int g0/0/1 overload
+ end
+
+
+-- INTERNET --
+!@edge
+ping 200.0.0.1
+conf t
+ ip route 0.0.0.0 0.0.0.0 200.0.0.1
+ end
+
+
+
 ************** Trunking and Etherchannel **************
 
 !@coreBaba, coreTaas
@@ -586,5 +612,6 @@ conf t
 conf t
  class-map voip
   match ip dscp  ?
+
 
 
